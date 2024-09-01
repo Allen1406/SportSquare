@@ -1,5 +1,5 @@
     body {
-        background-image: linear-gradient(rgba(181, 255, 155, 0.485), rgba(255, 255, 255, 0.5)), url(upscale.jpeg);
+        background-image: linear-gradient(rgba(181, 255, 155, 0.485), rgba(255, 255, 255, 0.5)), url(../assets/upscale.jpeg);
         box-sizing: border-box;
         background-repeat: no-repeat;
         background-position: center;
