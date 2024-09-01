@@ -1,85 +1,93 @@
-    body{
+    body {
         background-image: linear-gradient(rgba(181, 255, 155, 0.485), rgba(255, 255, 255, 0.5)), url(upscale.jpeg);
         box-sizing: border-box;
         background-repeat: no-repeat;
         background-position: center;
-        background-size:cover ;
+        background-size: cover;
         background-attachment: fixed;
     }
+
     /* Hide spinners in Chrome, Safari, and Edge */
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
-    .error-outline{
-        border: 2px solid red;
-        outline: none;
 
-    }
-    .header{
+
+
+    .header {
         display: flex;
         justify-content: center;
-        font-family: SUSE , Poppins;
+        font-family: SUSE, Poppins;
         font-size: 28px;
     }
-    .header h1{
+
+    .header h1 {
         font-weight: 700;
     }
+
     .register {
-        margin-top:20px ;
+        margin-top: 20px;
         display: flex;
         text-align: center;
         justify-content: center;
     }
-    .register h1{
-        font-family: SUSE ,Poppins;
+
+    .register h1 {
+        font-family: SUSE, Poppins;
         font-weight: 500;
         font-size: 40px;
     }
-    .register .content{
+
+    .register .content {
         background-color: rgba(73, 130, 210, 0.17);
         padding: 20px;
         border-radius: 20px;
         justify-content: center;
 
     }
+
     .register input,
     .register button {
         background-color: rgb(215, 228, 255);
-        font-family: SUSE , Poppins;
+        font-family: SUSE, Poppins;
         display: block;
-        transition: all .2s ease-in-out; 
+        transition: all .2s ease-in-out;
         text-align: center;
         width: 230px;
         height: 40px;
-        margin-bottom: 5px; 
+        margin-bottom: 5px;
         padding: 10px;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         border-radius: 5px;
         border: 0px;
     }
+
     .register input:hover,
-    .register button:hover{
+    .register button:hover {
         transform: scale(1.05);
     }
-    .register p{
+
+    .register p {
         font-size: 18px;
     }
+
     .error {
-        color: red; 
-        font-size: 14px; 
-        margin-top: 5px; 
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
         display: block;
     }
 
-    footer{
+    footer {
         display: flex;
         justify-content: center;
         margin-top: 10px;
     }
-    #bottom{
+
+    #bottom {
         justify-content: center;
-        font-family: SUSE,sans-serif;
+        font-family: SUSE, sans-serif;
         font-size: 18px;
     }
