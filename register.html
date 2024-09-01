@@ -13,26 +13,45 @@
     <title>Register!</title>
 </head>
 <body>
+    <script src="register.js"></script>
     <div class="header">
         <h1>SportSquare</h1>
     </div>
     <div class="register">
-        <form>
+        <form action="connect.php" method="post"></form>
+        <form action="#">
             <h1>Register</h1>
             <div class="content">
-            <input type="text" required name="firstname" id="firstname-input" placeholder="First Name">
-            <input type="text" required name="lastname" id="lastname-input" placeholder="Last Name">
-            <input type="text" required name="college-year" id="college-year-input" placeholder="College year">
-            <input type="text" required name="dob" id="dob-input" placeholder="Date of birth">
-            <input type="number" required name="Number" id="Number-input" placeholder="Number">
-            <input type="email" required  name="email" id="email-input" placeholder="Email">
-            <input type="password" required minlength="8" name="password" id="password-input" placeholder="Password">
-            <input type="password" required name="repeat-password" id="repet-password-input" placeholder="Repeat Password">
+            <input type="text" required name="firstname" id="firstname-input" name="firstname" placeholder="First Name">
+            <input type="text" required name="lastname" id="lastname-input" name="lastname" placeholder="Last Name">
+            <input type="text" required name="college-year" id="college-year-input" name="college-year" placeholder="College year">
+            <input type="text" required name="dob" id="dob-input" name="dob" placeholder="Date of birth">
+            <input type="number" required required maxlength="10" name="Number" id="Number-input" name="number"placeholder="Number">
+            <input type="email" required name="email" id="email-input" name="email"placeholder="Email">
+            <input type="password" required minlength="8" required maxlength="16" class="password" id="password" placeholder="Password" onkeyup='check()'>
+            <input type="password" required name="repeat-password" class="password" id="repetpassword" name="repeat-password" placeholder="Repeat Password" onkeyup='check()'>
+            <p id="alertPassword"></p>
             <button type="submit">Submit</button>
             </div>
             <p id="p2">Already have an Account? <a href="login.html">Login</a></p>
         </form>
     </div>
+    <script>
+
+var check = function() {
+
+if (document.getElementById('password').value ==  document.getElementById('repeatPassword').value)
+{
+document.getElementById('alertPassword').style.color = '#8CC63E';
+document.getElementById('alertPassword').innerHTML = '<span><i class="fas fa-check-circle"></i>Match !</span>';
+}
+    // OtherWise run this function
+else {
+document.getElementById('alertPassword').style.color = '#EE2B39';
+document.getElementById('alertPassword').innerHTML = '<span><i class="fas fa-exclamation-triangle"></i>not matching</span>';
+}
+}
+    </script>
     <footer>
     <p id="bottom">Team SportSquare</p>
     </footer>

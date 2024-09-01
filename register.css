@@ -55,6 +55,13 @@ body{
 .register p{
     font-size: 18px;
 }
+.error {
+    color: red; 
+    font-size: 14px; 
+    margin-top: 5px; 
+    display: block;
+}
+
 footer{
     display: flex;
     justify-content: center;
