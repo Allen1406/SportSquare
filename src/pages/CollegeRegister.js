@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import "../styles/register.css";
 import { TextField, Button, Typography, Box } from "@mui/material";
-import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -110,7 +110,7 @@ const CollegeRegister = () => {
         contactPerson,
         phoneNumber,
         email,
-        establishedDate: establishedDate.format('DD/MM/YYYY'),
+        establishedDate: establishedDate.format("DD/MM/YYYY"),
         address,
       });
       setSubmitted(true);
@@ -122,7 +122,7 @@ const CollegeRegister = () => {
   return (
     <Box sx={{ maxWidth: 600, mx: "auto", p: 3 }}>
       <Typography variant="h4" gutterBottom>
-        College Registration - SPORTQUARE
+        College Registration
       </Typography>
       <form onSubmit={handleSubmit}>
         <TextField

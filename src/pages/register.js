@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/register.css";
 import { TextField, Button, Typography } from "@mui/material";
-
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
