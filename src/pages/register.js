@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/register.css";
 import { TextField, Button, Typography } from "@mui/material";
-import dayjs from "dayjs";
+
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -141,7 +141,12 @@ const Register = () => {
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
           rel="stylesheet"
         />
-        <form method="post" action="connect.php" id="registrationForm" onSubmit={handleSubmit}>
+        <form
+          method="post"
+          action="connect.php"
+          id="registrationForm"
+          onSubmit={handleSubmit}
+        >
           <h1>Register</h1>
           <div className="content">
             <TextField
@@ -168,11 +173,21 @@ const Register = () => {
             <TextField
               sx={inputStyle}
               label="College Year"
-              type="number"
-              inputProps={{ min: 1, max: 6, maxLength: 1, pattern: "[1-6]" }}
+              // type="number"
               error={!!errors.collegeYear}
               helperText={errors.collegeYear}
-              onChange={(e) => setCollegeYear(e.target.value)}
+              value={collegeYear}
+              onChange={(e) => {
+                const string = e.target.value;
+                const regex = /[0-9]/;
+                const isValid = regex.test(string);
+                if (string.length > 1 || string > 4) {
+                  return;
+                }
+                if (isValid || string.length === 0) {
+                  setCollegeYear(string);
+                }
+              }}
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
@@ -198,7 +213,18 @@ const Register = () => {
               type="tel"
               error={!!errors.phoneNumber}
               helperText={errors.phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ""))}
+              value={phoneNumber}
+              onChange={(e) => {
+                const string = e.target.value;
+                const regex = /[0-9]/;
+                const isValid = regex.test(string);
+                if (string.length > 10) {
+                  return;
+                }
+                if (isValid || string.length === 0) {
+                  setPhoneNumber(e.target.value.replace(/\D/g, ""));
+                }
+              }}
             />
             <TextField
               sx={inputStyle}
